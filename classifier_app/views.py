@@ -1,10 +1,9 @@
 from django.shortcuts import render
-from .serializers import QuestionSerializer, AnswerSerializer, CommentSerializer
-from rest_framework import viewsets
-from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Classifier
-from django.contrib.auth.views import login
+from django.views import View
+from rest_framework import viewsets
+from .models import Classifier, Data
+from .serializers import ClassifierSerializer, DataSerializer
 
 
 # def index(request):
@@ -13,3 +12,13 @@ from django.contrib.auth.views import login
 class IndexView(View):
     def get(self, request, *args, **kwargs):
         return HttpResponse('Hello, World!')
+
+
+class ClassifierViewSet(viewsets.ModelViewSet):
+    serializer_class = ClassifierSerializer
+    queryset = Classifier.objects.all()
+
+
+class DataViewSet(viewsets.ModelViewSet):
+    serializer_class = DataSerializer
+    queryset = Data.objects.all()
