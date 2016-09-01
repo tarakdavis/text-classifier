@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Classifier(models.Model):
-    name = models.CharField(max_length=100, is_visible=False)
+    name = models.CharField(max_length=100)
 
     def train():
         pass
