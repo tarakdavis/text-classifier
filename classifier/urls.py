@@ -15,14 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-# from rest_framework import routers
+from rest_framework import routers
+from classifier_app import views
 
 
-# router = routers.DefaultRouter()
+router = routers.DefaultRouter()
+router.register(r'classifier', views.ClassifierViewSet)
+router.register(r'data', views.DataViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('classifier_app.urls')),
-    # url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    # url(r'^api/', include(router.urls))
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^api/', include(router.urls))
     ]
