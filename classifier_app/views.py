@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import View
 from rest_framework import viewsets
-from .model import Classifier, Data
+from .models import Classifier, Data
 from .serializers import ClassifierSerializer, DataSerializer
 
 
