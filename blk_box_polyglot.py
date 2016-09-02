@@ -41,3 +41,10 @@ print(py_pipeline.fit(X_spanish_training_data, y_spanish_training_data))
 # print(py_pipeline.score(X_spanish_test_data, y_spanish_test_data))
 
 print(py_pipeline.predict("porque es su madre un puta"))
+
+
+
+for idx, each in enumerate(all_labels):
+    X_train[idx]
+self.y_train = [self.label] * len(self.X_train)
+self.y_test = [self.label] * len(self.X_test)
