@@ -26,16 +26,16 @@ def pipeline_predict(request):  # self, X_train, y_train, label, X_test, y_test
     return prediction, score
 
 
-# class IndexView(TemplateView):
-#     template_name = 'classifier_app/index.html'
-#
-#
-# class TrainView(TemplateView):
-#     template_name = 'classifier_app/train.html'
-#
-#
-# class PredictView(TemplateView):
-#     template_name = 'classifier_app/predict.html'
+class IndexView(TemplateView):
+    template_name = 'classifier_app/index.html'
+
+
+class TrainView(TemplateView):
+    template_name = 'classifier_app/train.html'
+
+
+class PredictView(TemplateView):
+    template_name = 'classifier_app/predict.html'
 
 
 class ClassifierViewSet(viewsets.ModelViewSet):
