@@ -1,0 +1,2 @@
+export SECRET_KEY='jsztxl19kt$o2s(a2!mkj4n&vsd0@@%m@rrq$jrbau7-$iwk*_'
+export DATABASE_URL=postgres:///classifier
