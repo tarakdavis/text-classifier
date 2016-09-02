@@ -17,9 +17,9 @@ Ability to create a front-end JavaScript web application that communicates via A
 - T Robert Ward: https://github.com/TRIYGH
 
 #Important files in this folder
-requirements.txt - pip install requirements by entering 'pip install -r requirements.txt' in your command line
-runtime.txt - Python version necessary to run this app
-Django application
+- requirements.txt - pip install requirements by entering 'pip install -r requirements.txt' in your command line
+- runtime.txt - Python version necessary to run this app
+- Django application
 
 
 #As a user, I want to be able to...
