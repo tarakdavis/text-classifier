@@ -12,6 +12,14 @@ class IndexView(TemplateView):
     template_name = 'classifier_app/index.html'
 
 
+class TrainView(TemplateView):
+    template_name = 'classifier_app/train.html'
+
+
+class PredictView(TemplateView):
+    template_name = 'classifier_app/predict.html'
+
+
 class ClassifierViewSet(viewsets.ModelViewSet):
     serializer_class = ClassifierSerializer
     queryset = Classifier.objects.all()

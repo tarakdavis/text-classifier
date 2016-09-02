@@ -5,8 +5,51 @@
 
 {% block content %}
 <head>
-  hey
 </head>
 <body>
+  <div class="container" id='needspadding'>
+  <div class="row">
+      <div class="col-lg-2" id=row1col1>
+      </div>
+      <div class="col-lg-6" id='row1col2'>
+        <fieldset class='vertical-center'>
+          <div class="form-group">
+            <div class="col-lg-10">
+            <select class="form-control" id="select">
+              <!-- {% for classifier in classifiers %}
+         <option><a href="{% url 'classifier' classifier.classifier %}"> {{ classifier.classifier }}</a></option><br />
+       {% endfor %}
+            </select>
+              <select class="form-control" id="select">
+                {% for category in categories %}
+           <option><a href="{% url 'category' category.category %}"> {{ category.category }}</a></option><br />
+         {% endfor %} -->
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="textArea" class="col-lg-2 control-label">Textarea</label>
+            <div class="col-lg-10">
+              <textarea class="form-control" rows="5" id="textArea"></textarea>
+              <span class="help-block"></span>
+            </div>
+            <label for="select" class="col-lg-2 control-label">Selects</label>
+      <div class="col-lg-10">
+        <select class="form-control" id="select">
+          <option>Submit</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <div id="needspadding">
+        <button>Submit</button>
+      </div>
+        </fieldset>
+      </div>
+      <div class="col-lg-2" id='row1col3'>
+      </div>
+    </div>
+    </div>
 </body>
 {% endblock %}
