@@ -4,12 +4,12 @@ from django.views import View
 from rest_framework import viewsets
 from .models import Classifier, Data
 from .serializers import ClassifierSerializer, DataSerializer
+from django.views.generic import TemplateView
 
 
 # Create your views here.
-class IndexView(View):
-    def get(self, request, *args, **kwargs):
-        return HttpResponse('Hello, World!')
+class IndexView(TemplateView):
+    template_name = 'classifier_app/index.html'
 
 
 class ClassifierViewSet(viewsets.ModelViewSet):
