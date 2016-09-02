@@ -1,0 +1,39 @@
+*{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 18px;
+}
+
+#row1col2 {
+  text-align: center;
+  vertical-align: middle;
+}
+
+div.container{
+  width: 100%;
+}
+
+#needspadding {
+  padding-top: 1cm;
+}
+
+#bottompadding{
+  padding-bottom: 3cm;
+}
+
+h2 {
+  font-family: 'Cabin Sketch', cursive;
+}
+
+fieldset.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
