@@ -12,30 +12,36 @@ from sklearn.naive_bayes import MultinomialNB as MNB
 from sklearn.pipeline import Pipeline
 
 
-def pipeline_predict(request):  # self, X_train, y_train, label, X_test, y_test
-    self.X_train = X_train  # comes from DB
-    self.y_train = y_train  # passed in ( calc'd first )
-    self.label = label      # comes from user input
-    self.X_test = X_test    # comes from user input
-    self.y_test = y_test    # passed in ( calc'd first )
+# def index(request):
+#     return HttpResponse('hello world')
 
-    py_pipeline = Pipeline([("count", CV()), ("tfid", TF()), ("multi", MNB())])
-    py_pipeline.fit(X_train, y_train)
-    prediction = py_pipeline.predict(X_test)
-    score = py_pipeline.score(X_test, y_test)
-    return prediction, score
+# def pipeline_predict(request):  # self, X_train, y_train, label, X_test, y_test
+#     all_objects = Data.objects.all()
+#
+#     X_train = all_objects.text  # comes from DB
+#     label = all_objects.category    # comes from user input
+#
+#     y_train = label * X_train  # passed in ( calc'd first )
+#     X_test =    # comes from user input
+#     y_test =   # passed in ( calc'd first )
+#
+#     py_pipeline = Pipeline([("count", CV()), ("tfid", TF()), ("multi", MNB())])
+#     py_pipeline.fit(X_train, y_train)
+#     prediction = py_pipeline.predict(X_test)
+#     score = py_pipeline.score(X_test, y_test)
+#     return prediction, score
 
 
-# class IndexView(TemplateView):
-#     template_name = 'classifier_app/index.html'
-#
-#
-# class TrainView(TemplateView):
-#     template_name = 'classifier_app/train.html'
-#
-#
-# class PredictView(TemplateView):
-#     template_name = 'classifier_app/predict.html'
+class IndexView(TemplateView):
+    template_name = 'classifier_app/index.html'
+
+
+class TrainView(TemplateView):
+    template_name = 'classifier_app/train.html'
+
+
+class PredictView(TemplateView):
+    template_name = 'classifier_app/predict.html'
 
 
 class ClassifierViewSet(viewsets.ModelViewSet):
