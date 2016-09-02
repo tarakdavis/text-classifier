@@ -1,6 +1,24 @@
 *{
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.container {
+  margin-top: 50px;
+  width: 1000px;
+}
+
+#centerme{
+  width:800px;
+  margin:0 auto;
+  padding-top: 4cm;
+}
+
+body {
+  text-align: center;
+}
+
+select:invalid {
+  color: gray;
 }
 
 #row1col2 {
@@ -8,7 +26,28 @@
   vertical-align: middle;
 }
 
-div.container{
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+  margin: 10px;
+  margin-left: 60px;
+}
+
+head {
+  width:100%;
+  left:50%;
+  top:50%;
+}
+
+.btn {
+  background-color: #A8BBA2;
+}
+
+.form-control {
+  border: 1px solid #532D3B;
+  color: #FFF;
+  background-color: transparent;
+}
+
+div.container-fluid{
   width: 100%;
 }
 
@@ -21,7 +60,6 @@ div.container{
 }
 
 h2 {
-  font-family: 'Cabin Sketch', cursive;
 }
 
 fieldset.vertical-center {
