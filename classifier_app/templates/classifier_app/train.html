@@ -2,21 +2,34 @@
 {% load staticfiles %}
 
 {% block title %}{% endblock %}
-
-{% block content %}
 <head>
-  <div class="row">
-      <div class="col-lg-2" id=row1col1>
-        One of three columns
-      </div>
-      <div class="col-lg-6" id='row1col2'>
-        One of three columns
-      </div>
-      <div class="col-lg-2" id='row1col3'>
-        One of three columns
-      </div>
-    </div>
+<h2>Classify your text.</h2>
 </head>
+{% block content %}
 <body>
+<div class='container' id='centerme'>
+<div class="row">
+<div class="col-xl-2" id=row1col1>
+</div>
+<div class="col-xl-6" id='row1col2'>
+<fieldset class='vertical-center'>
+<div class="form-group">
+<input type="text" class="form-control" id="inputclass" placeholder="Name the classifer.">
+</div>
+<div class="form-group">
+<input type="text" class="form-control" id="inputcat" placeholder="Name the category.">
+</div>
+<div class="form-group">
+<textarea class="form-control" rows="5" id="textArea" placeholder="Enter some text to train the classifer."></textarea>
+</div>
+<div id="needspadding">
+<a href="#" class="btn btn-default" type='submit'>Train</a>
+</div>
+</fieldset>
+</div>
+<div class="col-lg-2" id='row1col3'>
+</div>
+</div>
+</div>
 </body>
 {% endblock %}
