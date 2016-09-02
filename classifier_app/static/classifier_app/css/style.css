@@ -7,10 +7,22 @@
   width: 1000px;
 }
 
+nav{
+  background-color: 615C60;
+}
+
 #centerme{
   width:800px;
   margin:0 auto;
   padding-top: 4cm;
+}
+
+#needsmorepadding {
+  padding-top: 3cm;
+}
+
+#smallpadding {
+  padding-top: 0.5cm;
 }
 
 body {
@@ -27,7 +39,7 @@ select:invalid {
 }
 
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
-  margin: 10px;
+  margin: 1px;
   margin-left: 60px;
 }
 
@@ -36,6 +48,8 @@ head {
   left:50%;
   top:50%;
 }
+
+ul.
 
 .btn {
   background-color: #A8BBA2;
@@ -49,6 +63,10 @@ head {
 
 div.container-fluid{
   width: 100%;
+}
+
+.title {
+  font-weight: bold;
 }
 
 #needspadding {
@@ -74,4 +92,5 @@ fieldset.vertical-center {
   width: 100%;
   height: 100%;
   min-height: 100%;
+  padding-top: 1cm;
 }

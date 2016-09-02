@@ -15,21 +15,21 @@ from sklearn.pipeline import Pipeline
 # def index(request):
 #     return HttpResponse('hello world')
 
-# def pipeline_predict(request):  # self, X_train, y_train, label, X_test, y_test
-#     all_objects = Data.objects.all()
-#
-#     X_train = all_objects.text  # comes from DB
-#     label = all_objects.category    # comes from user input
-#
-#     y_train = label * X_train  # passed in ( calc'd first )
-#     X_test =    # comes from user input
-#     y_test =   # passed in ( calc'd first )
-#
-#     py_pipeline = Pipeline([("count", CV()), ("tfid", TF()), ("multi", MNB())])
-#     py_pipeline.fit(X_train, y_train)
-#     prediction = py_pipeline.predict(X_test)
-#     score = py_pipeline.score(X_test, y_test)
-#     return prediction, score
+def pipeline_predict(request):  # self, X_train, y_train, label, X_test, y_test
+    all_objects = Data.objects.all()
+
+    X_train = all_objects.text  # comes from DB
+    label = all_objects.category    # comes from user input
+
+    y_train = label * X_train  # passed in ( calc'd first )
+    X_test =    # comes from user input
+    y_test =   # passed in ( calc'd first )
+
+    py_pipeline = Pipeline([("count", CV()), ("tfid", TF()), ("multi", MNB())])
+    py_pipeline.fit(X_train, y_train)
+    prediction = py_pipeline.predict(X_test)
+    score = py_pipeline.score(X_test, y_test)
+    return prediction, score
 
 
 class IndexView(TemplateView):
