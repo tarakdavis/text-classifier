@@ -7,39 +7,42 @@
 </head>
 {% block content %}
 <body>
-<div class='container' id='centerme'>
-<div class="row">
-<div class="col-xl-2" id=row1col1>
-</div>
-<div class="col-xl-6" id='row1col2'>
+  <div class="site-wrapper">
+  <div class="container">
+  <div>
+  <h1 class="title">We classify.</h1>
+  <div class="description">
+    Let us do the work. Select a classifier, a category of that classifer, <br \>and enter some text for us to classify.
+  </div>
+  <div id='smallpadding'>
 <fieldset class='vertical-center'>
+  {% csrf_token %}
 <div class="form-group">
-<select class="form-control" id="select">
-  <option value="" disabled selected>Select a classifer.</option>
-{% for classifier in classifiers %}
-<option><a id="classchoice" href="{% url 'classifier' classifier.classifier %}"> {{ classifier.classifier }}</a></option><br />
-{% endfor %}
-</select>
+  <form>
+    <select class="form-control" id="select" required>
+      <option value="" disabled selected hidden>Select a classifier</option>
+      {% for classifier in classifiers %}
+      <option><a id="classchoice" href="{% url 'classifier' classifier.classifier %}"> {{ classifier.classifier }}</a></option><br />
+      {% endfor %}
+    </select>
+<div id='smallpadding'>
 </div>
-<div class="form-group">
-<select class="form-control" id="select">
-  <option value="" disabled selected>Select a category.</option>
-{% for category in categories %}
-<option><a id='catchoice' href="{% url 'category' category.category %}"> {{ category.category }}</a></option><br />
-{% endfor %}
-</select>
+    <select class="form-control" id="select" required>
+        <option value="" disabled selected hidden>Select a category</option>
+        {% for category in categories %}
+        <option><a id='catchoice' href="{% url 'category' category.category %}"> {{ category.category }}</a></option><br />
+        {% endfor %}
+    </select>
+<div id='smallpadding'>
 </div>
-<div class="form-group">
-<textarea class="form-control" rows="5" id="textArea" placeholder="Enter some text to predict the classification."></textarea>
+<textarea class="form-control" rows="5" id="textArea" placeholder="Enter some text"></textarea>
 <span class="help-block"></span>
 </div>
-<label for="select" class="col-lg-2 control-label"></label>
+</form>
 <div id="needspadding">
 <a href="#" class="btn btn-default" type='submit'>Predict</a>
 </div>
 </fieldset>
-</div>
-<div class="col-lg-2" id='row1col3'>
 </div>
 </div>
 </div>

@@ -7,27 +7,32 @@
 </head>
 {% block content %}
 <body>
-<div class='container' id='centerme'>
+  <div class="site-wrapper">
+  <div class="container">
+  <div>
+  <h1 class="title">You train.</h1>
+  <div class="description">
+  Build your own classifier. Give it a name, a category of that name, <br \>and some text to train it with.
+  </div>
+  <div id='smallpadding'>
 <div class="row">
-<div class="col-xl-2" id=row1col1>
-</div>
-<div class="col-xl-6" id='row1col2'>
 <fieldset class='vertical-center'>
+  {% csrf_token %}
 <div class="form-group">
-<input type="text" class="form-control" id="inputclass" placeholder="Name the classifer.">
+<input type="text" class="form-control" id="inputclass" placeholder="Name the classifer">
+<div id='smallpadding'>
 </div>
-<div class="form-group">
-<input type="text" class="form-control" id="inputcat" placeholder="Name the category.">
+<input type="text" class="form-control" id="inputcat" placeholder="Name the category">
+<div id='smallpadding'>
 </div>
-<div class="form-group">
-<textarea class="form-control" rows="5" id="textArea" placeholder="Enter some text to train the classifer."></textarea>
+<textarea class="form-control" rows="5" id="textArea" placeholder="Enter some text"></textarea>
 </div>
-<div id="needspadding">
+<div id="smallpadding">
 <a href="#" class="btn btn-default" type='submit'>Train</a>
 </div>
 </fieldset>
 </div>
-<div class="col-lg-2" id='row1col3'>
+</div>
 </div>
 </div>
 </div>
