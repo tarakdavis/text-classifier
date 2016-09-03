@@ -1,0 +1,51 @@
+{% extends "classifier_app/base.html" %}
+{% load staticfiles %}
+
+{% block title %}{% endblock %}
+<head>
+<h2>Classify your text.</h2>
+</head>
+{% block content %}
+<body>
+<div class="site-wrapper">
+<div class="container">
+<div>
+<h1 class="title">We classify.</h1>
+<div class="description">
+Let us do the work. Select a classifier and <br \>some text for us to classify, we'll spit out a category.
+</div>
+<div id='smallpadding'>
+<fieldset class='vertical-center'>
+{% csrf_token %}
+<div class="form-group">
+<form method='POST'>
+<select name='classifier_id' class="form-control" id="select" required>
+<option value="" disabled selected hidden>Select a classifier</option>
+{% for classifier in classifier_list %}
+    <option value="{{ classifier.id }}">{{ classifier.name }}</option>
+{% endfor %}
+</select>
+<div id='smallpadding'>
+</div>
+<!-- <select class="form-control" id="select" required>
+<option value="" disabled selected hidden>Select a category</option>
+{% for category in data_list %}
+<option><a id='catchoice' href="{% url 'category' category.category %}"> {{ category.category }}</a></option><br />
+{% endfor %}
+</select>
+<div id='smallpadding'>
+</div> -->
+<textarea class="form-control" rows="5" id="textArea" placeholder="Enter some text"></textarea>
+<span class="help-block"></span>
+</div>
+</form>
+<div id="needspadding">
+<a style="color:black" href="#" class="btn btn-default" type='submit'>Predict</a>
+</div>
+</fieldset>
+</div>
+</div>
+</div>
+</body>
+{% endblock %}
+<script src="{% static 'js/predict.js' %}"></script>
