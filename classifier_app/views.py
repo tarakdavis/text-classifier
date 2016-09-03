@@ -22,8 +22,8 @@ def pipeline_predict(request):  # self, X_train, y_train, label, X_test, y_test
     label = all_objects.category    # comes from user input
 
     y_train = label * X_train  # passed in ( calc'd first )
-    X_test =    # comes from user input
-    y_test =   # passed in ( calc'd first )
+    # X_test =    # comes from user input
+    # y_test =   # passed in ( calc'd first )
 
     py_pipeline = Pipeline([("count", CV()), ("tfid", TF()), ("multi", MNB())])
     py_pipeline.fit(X_train, y_train)
