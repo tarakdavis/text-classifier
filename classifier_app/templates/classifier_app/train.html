@@ -7,17 +7,17 @@
 </head>
 {% block content %}
 <body>
-  <div class="site-wrapper">
-  <div class="container">
-  <div>
-  <h1 class="title">You train.</h1>
-  <div class="description">
-  Build your own classifier. Give it a name, a category of that name, <br \>and some text to train it with.
-  </div>
-  <div id='smallpadding'>
+<div class="site-wrapper">
+<div class="container">
+<div>
+<h1 class="title">You train.</h1>
+<div class="description">
+Build your own classifier. Give it a name, a category of that name, <br \>and some text to train it with.
+</div>
+<div id='smallpadding'>
 <div class="row">
 <fieldset class='vertical-center'>
-  {% csrf_token %}
+{% csrf_token %}
 <div class="form-group">
 <input type="text" class="form-control" id="inputclass" placeholder="Name the classifer">
 <div id='smallpadding'>
@@ -28,7 +28,7 @@
 <textarea class="form-control" rows="5" id="textArea" placeholder="Enter some text"></textarea>
 </div>
 <div id="smallpadding">
-<a href="#" class="btn btn-default" type='submit'>Train</a>
+<a style="color:black" href="#" class="btn btn-default" type='submit'>Train</a>
 </div>
 </fieldset>
 </div>
