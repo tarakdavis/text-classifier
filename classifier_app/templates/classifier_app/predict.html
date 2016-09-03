@@ -18,25 +18,23 @@ Let us do the work. Select a classifier, a category of that classifer, <br \>and
 <fieldset class='vertical-center'>
 {% csrf_token %}
 <div class="form-group">
-<form>
-<select class="form-control" id="select" required>
+<form method='POST'>
+<select name='classifier_id' class="form-control" id="select" required>
 <option value="" disabled selected hidden>Select a classifier</option>
-{% for classifier in classifiers %}
-    <option value="genre">{{ }}</option>
-{% endfor %} -->
-<option><a id="classchoice" href="{% url 'classifier' classifier.classifier %}"> {{ classifier.classifier }}</a></option><br />
+{% for classifier in classifier_list %}
+    <option value="{{ classifier.id }}">{{ classifier.name }}</option>
 {% endfor %}
 </select>
 <div id='smallpadding'>
 </div>
-<select class="form-control" id="select" required>
+<!-- <select class="form-control" id="select" required>
 <option value="" disabled selected hidden>Select a category</option>
-{% for category in categories %}
+{% for category in data_list %}
 <option><a id='catchoice' href="{% url 'category' category.category %}"> {{ category.category }}</a></option><br />
 {% endfor %}
 </select>
 <div id='smallpadding'>
-</div>
+</div> -->
 <textarea class="form-control" rows="5" id="textArea" placeholder="Enter some text"></textarea>
 <span class="help-block"></span>
 </div>
