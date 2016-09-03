@@ -80,6 +80,11 @@ ul.nav.navbar-nav.nabar-right li a:hover {
   padding-bottom: 3cm;
 }
 
+a.userchoice {
+  text-decoration: none;
+  color: #2C3E50;
+}
+
 h1, h2 {
   font-family: 'Lobster', cursive;
 }
