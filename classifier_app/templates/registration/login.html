@@ -1,13 +1,25 @@
-{% extends "../classifier_app/base.html" %}
+{% extends "classifier_app/base.html" %}
 {% load staticfiles %}
-{% block body %} {% if form.errors %}
+
+{% block title %}{% endblock %}
+<head>
+</head>
+{% block content %}
+</head>
+<body>
+<div class="site-wrapper">
+<div class="container">
+<div>
+<h1 class="title">Log In To Babble</h1>
+<div class='smallpadding'>
+{% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
 <div class="container">
     <div class="col-md-4"></div>
       <div class="col-md-4">
         <form method="post" action="{% url 'login' %}">
-            <h1> Login to Text classifier </h1>
+            <h1> </h1>
             {% csrf_token %}
             {{ form.as_p }}
             <input class="btn btn-success" type="submit" value="Login" />
@@ -17,5 +29,9 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+</div>
+</div>
 
 {% endblock %}
