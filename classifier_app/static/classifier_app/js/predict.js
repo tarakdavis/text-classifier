@@ -45,11 +45,15 @@ $.ajax({ url: '/api/data/' }).done(function(response) {
 $(document).ready(function(){
   $('#------').click(function(response){
 // var $table = $("#answers")
-    $.ajax({ url: '/api/predict/'}).done(function(response) {
-      response.results.forEach(function(contents){
-        if(contents.classifier == ###whatever classifier we are in ####){
+    var xtrain = {}
+    $.ajax({ url: '/api/classifier/'}).done(function(response) {
+      response.forEach(function(contents){
+        if(contents.classifier == contents.user){
           var $xtrain += contents.text
           var $ytrain += contents.category
+          (for var i = 0; i < contents.text.length(); i++){
+              
+          }
         }
       })
     })
