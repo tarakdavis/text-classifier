@@ -12,16 +12,17 @@ from sklearn.naive_bayes import MultinomialNB as MNB
 from sklearn.pipeline import Pipeline
 
 
-def pipeline_predict(request):  # self, X_train, y_train, label, X_test, y_test
-    self.X_train = X_train  # comes from DB
-    self.y_train = y_train  # passed in ( calc'd first )
-    self.label = label      # comes from user input
-    self.X_test = X_test    # comes from user input
-    self.y_test = y_test    # passed in ( calc'd first )
-
+def pipeline_predict(request, pk):  # self, X_train, y_train, label, X_test, y_test
+    # self.X_train = X_train  # comes from DB
+    # self.y_train = y_train  # passed in ( calc'd first )
+    # self.label = label      # comes from user input
+    # self.X_test = X_test    # comes from user input
+    # self.y_test = y_test    # passed in ( calc'd first )
+    classifier = Classifier.object.get(id=2)
     py_pipeline = Pipeline([("count", CV()), ("tfid", TF()), ("multi", MNB())])
-    py_pipeline.fit(X_train, y_train)
-    prediction = py_pipeline.predict(X_test)
+    data_set = classifier.data_set.all()
+    py_pipeline.fit()
+    prediction = py_pipeline.predict('hola')
     score = py_pipeline.score(X_test, y_test)
     return prediction, score
 
