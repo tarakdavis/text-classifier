@@ -3,6 +3,7 @@ from django.contrib import admin
 from . import views
 from .views import IndexView, TrainView, PredictView
 
+
 urlpatterns = [
     # url(r'^predict/$', views.predict, name='predict'),  # T
     url(r'^train/$', views.TrainView.as_view(), name='train'),
