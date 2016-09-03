@@ -5,6 +5,7 @@ from rest_framework import viewsets
 from .models import Classifier, Data
 from .serializers import ClassifierSerializer, DataSerializer
 from django.views.generic import TemplateView
+from django.views import generic
 # for the Pipeline
 from sklearn.feature_extraction.text import CountVectorizer as CV
 from sklearn.feature_extraction.text import TfidfTransformer as TF
@@ -40,8 +41,17 @@ class TrainView(TemplateView):
     template_name = 'classifier_app/train.html'
 
 
-class PredictView(TemplateView):
+class PredictView(generic.ListView):
     template_name = 'classifier_app/predict.html'
+    context_object_name = 'data_list'
+
+    def get_queryset(self):
+        return Data.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(PredictView, self).get_context_data(**kwargs)
+        context['classifier_list'] = Classifier.objects.all()
+        return context
 
 
 class ClassifierViewSet(viewsets.ModelViewSet):
