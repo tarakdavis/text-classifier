@@ -29,6 +29,14 @@
           <li><a href="{% url 'classifier_app:train' %}">Train</a></li>
           <li><a href="{% url 'classifier_app:predict' %}">Predict</a></li>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+            <li><a>Welcome {{ user.username }}</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+        </ul>
       </div>
     </div>
   </nav>
