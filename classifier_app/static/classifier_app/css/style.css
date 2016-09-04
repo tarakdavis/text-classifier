@@ -103,3 +103,8 @@ fieldset.vertical-center {
   min-height: 100%;
   padding-top: 1cm;
 }
+
+#pickclassif
+{
+    display:block !important;
+}
