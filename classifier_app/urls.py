@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^train/$', views.TrainView.as_view(), name='train'),
     url(r'^predict/$', views.PredictView.as_view(), name='predict'),
     url(r'^$', views.IndexView.as_view(), name='index'),
+    url(r'^accounts/profile/$', views.IndexView.as_view(), name='index'),
     url(r'^login/$', login, name='login'),
     url(r'^logout/$', logout, {'next_page': '/login'}, name='logout'),
     url(r'^register/$', CreateView.as_view(
