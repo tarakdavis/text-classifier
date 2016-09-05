@@ -6,26 +6,27 @@
 </head>
 
 <body>
-<div class="site-wrapper">
-<div class="container">
-<div>
-<h2 class="title">Register For Babel</h2>
-<div class='smallpadding'>
-<div class="container">
-<div class="col-md-2"></div>
-<div class="col-md-8">
-<form method=POST>
-{% csrf_token %}
-{{ form.as_p }}
-<input type="button" id="newStuff" value="Create New Account"/>
-</form>
-<div class="login_button">
-<p> Already have an account?<a href="{% url 'classifier_app:login' %}" class="btn btn-link userchoice"><b>Log in.</b></a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+  <div class="site-wrapper">
+    <div class="container">
+      <div>
+      <h2 class="title">Register For Babel</h2>
+      < div class='smallpadding'>
+      <div class="container">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+      <form method=POST>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" id="newStuff" value="Create New Account"/>
+      </form>
+      <div class="login_button">
+      <p> Already have an account?<a href="{% url 'classifier_app:login' %}" class="btn btn-link userchoice"><b>Log in.</b></a></p>
+      </div>
+      </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 {% endblock %}
