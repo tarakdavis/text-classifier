@@ -18,7 +18,6 @@ from sklearn.pipeline import Pipeline
 from collections import defaultdict
 
 
-
 def index(request):
     return render(request, 'classifier_app/index.html')
 
@@ -29,6 +28,10 @@ def train(request):
 
 def predict(request):
     return render(request, 'classifier_app/predict.html')
+
+
+def delete(request):
+    return render(request, 'classifier_app/delete.html')
 
 
 def classifier_delete(request):
