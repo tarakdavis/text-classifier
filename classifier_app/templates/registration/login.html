@@ -18,14 +18,14 @@
 <div class="container">
     <div class="col-md-4"></div>
       <div class="col-md-4">
-        <form method="post" action="{% url 'login' %}">
+        <form method="post" action="{% url 'classifier_app:login' %}">
             <h1> </h1>
             {% csrf_token %}
             {{ form.as_p }}
             <input class="btn btn-success" type="submit" value="Login" />
         </form>
         <div class="login_button">
-          <p> Don&#146;t already have an account?<a href="{% url 'register' %}" class="btn btn-link"> Create an account.</a></p>
+          <p> Don&#146;t already have an account?<a href="{% url 'classifier_app:register' %}" class="btn btn-link"> Create an account.</a></p>
         </div>
       </div>
     </div>
