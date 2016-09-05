@@ -1,33 +1,30 @@
-{% extends "classifier_app/base.html" %}
-{% load staticfiles %}
+{% extends "classifier_app/base.html" %} {% load staticfiles %} {% block title %}{% endblock %}
 
-{% block title %}{% endblock %}
 <head>
 </head>
 {% block content %}
 </head>
+
 <body>
-<div class="site-wrapper">
-<div class="container">
-<div>
-<h1 class="title">Log In To Babel</h1>
-<div class='smallpadding'>
-<div class="container">
-  {% if form.errors %}
-  <p>Your username and password didn't match. Please try again.</p>
-  {% endif %}</div>
-<form method="post" action="{% url 'classifier_app:login' %}">
-<h1> </h1>
-{% csrf_token %}
-{{ form.as_p }}
-<input type="button" id="newStuff" value="Login"/>
-</form>
-<div class="login_button">
-<p> Don&#146;t already have an account?<a href="{% url 'classifier_app:register' %}" class="btn btn-link"> Create an account.</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <div class="site-wrapper">
+        <div class="container">
+            <div>
+                <h1 class="title">Log In To Babel</h1>
+                <div class='smallpadding'>
+                    <div class="container">
+                        {% if form.errors %}
+                        <p>Your username and password didn't match. Please try again.</p>
+                        {% endif %}</div>
+                    <form method="post" action="{% url 'classifier_app:login' %}">
+                        <h1> </h1> {% csrf_token %} {{ form.as_p }}
+                        <input type="submit" class="btn btn-success" value="Login" />
+                    </form>
+                    <div class="login_button">
+                        <p> Don&#146;t already have an account?<a href="{% url 'classifier_app:register' %}" class="btn btn-link"> Create an account.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 {% endblock %}
