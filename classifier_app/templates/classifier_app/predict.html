@@ -34,13 +34,11 @@
                                   <form id="stupid" name="text_to_classif" action="/pipeline_predict/" method="POST">
                                       {% csrf_token %}
                                       <textarea class="form-control" type="submit" rows="5" id="textArea" placeholder="Enter some text" name="text_to_classif" form="stupid"></textarea>
-                                      <br>
+
+                            <br>
+                                <input id='inputPredictBtn' type="submit" value="Predict" class="submitButton">
                                   </form>
                               </div>
-                          </div>
-                          <div id="smallpadding">
-                              {% csrf_token %}
-                              <input id='inputPredictBtn' type="submit" value="Predict" class="submitButton">
                           </div>
                   </fieldset>
                   </div>
