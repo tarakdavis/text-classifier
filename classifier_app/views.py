@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 from django.views import View
 from rest_framework import viewsets
 from .models import Classifier, Data
@@ -7,16 +8,14 @@ from .serializers import ClassifierSerializer, DataSerializer
 from django.views.generic import TemplateView
 from django.views import generic
 from django.urls import reverse
-
 from rest_framework.decorators import api_view
-
+import re
 # for the Pipeline
 from sklearn.feature_extraction.text import CountVectorizer as CV
 from sklearn.feature_extraction.text import TfidfTransformer as TF
 from sklearn.naive_bayes import MultinomialNB as MNB
 from sklearn.pipeline import Pipeline
 from collections import defaultdict
-
 
 
 def index(request):
@@ -29,6 +28,32 @@ def train(request):
 
 def predict(request):
     return render(request, 'classifier_app/predict.html')
+
+
+def delete(request):
+    return render(request, 'classifier_app/delete.html')
+
+
+def classifier_delete(request):
+    # delete an object and send a confirmation response
+    x = str(request)
+    y = int(re.findall(r'[0-9]+', x)[0])
+    dele = Classifier.objects.get(pk=y)
+    dele.delete()
+    return render(request, 'classifier_app/delete.html')
+    # Classifier.objects.get(pk=request.DELETE['pk']).delete()
+    # return HttpResponse()
+
+
+def data_delete(request):
+    # delete an object and send a confirmation response
+    x = str(request)
+    y = int(re.findall(r'[0-9]+', x)[0])
+    dele = Data.objects.get(pk=y)
+    dele.delete()
+    return render(request, 'classifier_app/delete.html')
+
+    # return HttpResponse(classifier_app/delete.html)
 
 
 # def new_classif(request):
@@ -45,7 +70,6 @@ def predict(request):
 #
 #     context = {'response': "preclas" + "precat" + "pretext"}
 #     return render(request, 'classifier_app/tindex.html', context)
-
 
 def pipeline_predict(request):
     if request.method == 'POST':
@@ -76,23 +100,6 @@ def pipeline_predict(request):
     }
     return render(request, 'classifier_app/tindex.html', context)
 
-# from ART =======================================================================================
-
-# def anotherFUNC(request, pk):  # self, X_train, y_train, label, X_test, y_test
-#     if request.method == 'POST':
-#         print("Posted")
-#         form = TrainDataForm(request.POST)
-#         if form.is_valid():
-#             var = request.POST['user_input']
-#             print('user input', var)
-#     else:
-#         print("didn't post")
-# 	context = {
-#         'var': var,
-#     }
-# 	return render(request, 'classifier_app/train.html', context)
-
-# from ART =======================================================================================
 
 # class IndexView(TemplateView):
 #     template_name = 'classifier_app/index.html'
@@ -101,7 +108,7 @@ def pipeline_predict(request):
 # class TrainView(TemplateView):
 #     template_name = 'classifier_app/train.html'
 #
-#
+
 # class PredictView(generic.ListView):
 #     template_name = 'classifier_app/predict.html'
 #     context_object_name = 'data_list'
