@@ -9,6 +9,7 @@ from django.views.generic import TemplateView
 from django.views import generic
 from django.urls import reverse
 from rest_framework.decorators import api_view
+import re
 # for the Pipeline
 from sklearn.feature_extraction.text import CountVectorizer as CV
 from sklearn.feature_extraction.text import TfidfTransformer as TF
@@ -29,6 +30,10 @@ def predict(request):
     return render(request, 'classifier_app/predict.html')
 
 
+def delete(request):
+    return render(request, 'classifier_app/delete.html')
+
+
 def classifier_delete(request):
     # delete an object and send a confirmation response
     Classifier.objects.get(pk=request.DELETE['pk']).delete()
@@ -37,8 +42,13 @@ def classifier_delete(request):
 
 def data_delete(request):
     # delete an object and send a confirmation response
-    Data.objects.get(pk=request.DELETE['pk']).delete()
-    return HttpResponse()
+    x = str(request)
+    y = int(re.findall(r'[0-9]+', x)[0])
+    dele = Data.objects.get(pk=y)
+    dele.delete()
+    return render(request, 'classifier_app/delete.html')
+
+    # return HttpResponse(classifier_app/delete.html)
 
 
 # def new_classif(request):

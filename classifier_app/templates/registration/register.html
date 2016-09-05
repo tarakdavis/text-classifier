@@ -12,20 +12,20 @@
 <div>
 <h2 class="title">Register For Babble</h2>
 <div class='smallpadding'>
-  <div class="container">
-  <div class="col-md-3"></div>
-    <div class="col-md-6">
-        <form method=POST>
-            {% csrf_token %}
-            {{ form.as_p }}
-          <button type='submit' class="btn btn-success">Create New Account</button>
-        </form>
-      <div class="login_button">
-        <p> Already have an account?<a href="{% url 'classifier_app:login' %}" class="btn btn-link"> Log in.</a></p>
-      </div>
-        </div>
-    </div>
-  </div>
+<div class="container">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+<form method=POST>
+{% csrf_token %}
+{{ form.as_p }}
+<input type="button" id="newStuff" value="Create New Account"/>
+</form>
+<div class="login_button">
+<p> Already have an account?<a href="{% url 'classifier_app:login' %}" class="btn btn-link"> Log in.</a></p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
