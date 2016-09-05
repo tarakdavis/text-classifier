@@ -6,34 +6,42 @@
 {% block content %}
 
 <body>
-    <div class="site-wrapper">
-        <div class="container">
-            <div>
-                <h1 class="title">You train.</h1>
-                <div class="description">
-                    Build your own classifier. Give it a name, a category of that name,
-                    <br>and some text to train it with.
-                </div>
-                <div id='smallpadding'>
-                    <div class="row">
-                        <fieldset class='vertical-center'>
-                            {% csrf_token %}
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="inputclass" placeholder="Name the classifer" name="newClass">
-                                <div id='smallpadding'>
-                                </div>
-                                <input type="text" class="form-control" id="inputcat" placeholder="Name the category" name="newCat">
-                                <div id='smallpadding'>
-                                </div>
-                                <textarea class="form-control" rows="5" id="textArea" placeholder="Enter some text" name="newText"></textarea><br>
-                                {% csrf_token %}
-                                <input type="button" id="newStuff" value="Submit">
-                            </div>
-                        </fieldset>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="site-wrapper">
+<div class="container">
+<div>
+<h1 class="title">You train.</h1>
+<div class="description">
+Build your own classifier. Give it a name, a category of that name, <br \>and upload a .csv or type some text to train it.
+</div>
+<div id='smallpadding'>
+<div class="row">
+<fieldset class='vertical-center'>
+{% csrf_token %}
+<div class="form-group">
+<input type="text" class="form-control" id="inputclass" placeholder="Name the classifer">
+<div id='smallpadding'>
+</div>
+<input type="text" class="form-control" id="inputcat" placeholder="Name the category">
+<div id='smallpadding'>
+</div>
+<div class='row'>
+<div class='col-xl-4 col-md-4'>
+<input id="fileSelect" type="file" accept=".csv" />
+</div>
+<div class='col-xl-8 col-md-8'>
+<textarea class="form-control" rows="5" id="textArea" placeholder="Enter some text"></textarea>
+</div>
+</div>
+<div id="smallpadding">
+{% csrf_token %}
+<input type="button" id="newStuff" value="Train">
+</div>
+</fieldset>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </body>
 {% endblock %}
