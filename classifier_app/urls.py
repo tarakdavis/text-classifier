@@ -9,12 +9,20 @@ from django.contrib.auth.views import login, logout
 app_name = 'classifier_app'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^train/$', views.train, name='train'),
+    url(r'^predict/$', views.predict, name='predict'),
+    # url(r'^predict/$', views.predict, name='predict'),  # T
+    # url(r'^train/$', views.TrainView.as_view(), name='train'),
+    # url(r'^train/$', views.TrainView.as_view(), name='train'),
+    # url(r'^predict/$', views.PredictView.as_view(), name='predict'),
+    # url(r'^train/$', views.train, name='train'),
+    # url(r'^predict/$', views.predict, name='predict'),
+    # url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^tt/$', views.pipeline_predict, name='tindex'),
     url(r'^train/$', views.train, name='train'),
     url(r'^predict/$', views.predict, name='predict'),
     url(r'^pipeline_predict/$', views.pipeline_predict, name='pipe'),
     url(r'^delete/$', views.delete, name='delete'),
-
     # url(r'^train/$', views.TrainView.as_view(), name='train'),
     # url(r'^predict/$', views.PredictView.as_view(), name='predict'),
     # url(r'^predict/$', views.pipeline_predict, name='pipeline_predict')

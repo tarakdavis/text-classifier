@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 from django.views import View
 from rest_framework import viewsets
 from .models import Classifier, Data
@@ -7,9 +8,7 @@ from .serializers import ClassifierSerializer, DataSerializer
 from django.views.generic import TemplateView
 from django.views import generic
 from django.urls import reverse
-
 from rest_framework.decorators import api_view
-
 # for the Pipeline
 from sklearn.feature_extraction.text import CountVectorizer as CV
 from sklearn.feature_extraction.text import TfidfTransformer as TF
@@ -61,7 +60,6 @@ def data_delete(request):
 #     context = {'response': "preclas" + "precat" + "pretext"}
 #     return render(request, 'classifier_app/tindex.html', context)
 
-
 def pipeline_predict(request):
     if request.method == 'POST':
         preTest = request.POST.get('text_to_classif')
@@ -91,23 +89,6 @@ def pipeline_predict(request):
     }
     return render(request, 'classifier_app/tindex.html', context)
 
-# from ART =======================================================================================
-
-# def anotherFUNC(request, pk):  # self, X_train, y_train, label, X_test, y_test
-#     if request.method == 'POST':
-#         print("Posted")
-#         form = TrainDataForm(request.POST)
-#         if form.is_valid():
-#             var = request.POST['user_input']
-#             print('user input', var)
-#     else:
-#         print("didn't post")
-# 	context = {
-#         'var': var,
-#     }
-# 	return render(request, 'classifier_app/train.html', context)
-
-# from ART =======================================================================================
 
 # class IndexView(TemplateView):
 #     template_name = 'classifier_app/index.html'
@@ -116,7 +97,7 @@ def pipeline_predict(request):
 # class TrainView(TemplateView):
 #     template_name = 'classifier_app/train.html'
 #
-#
+
 # class PredictView(generic.ListView):
 #     template_name = 'classifier_app/predict.html'
 #     context_object_name = 'data_list'
