@@ -1,20 +1,32 @@
-{% extends '../classifier_app/base.html' %}
+{% extends "classifier_app/base.html" %}
+{% load staticfiles %}
 
-{% block body %}
+{% block title %}{% endblock %}
+<head>
+</head>
+{% block content %}
+</head>
+<body>
+<div class="site-wrapper">
 <div class="container">
+<div>
+<h2 class="title">Register For Babble</h2>
+<div class='smallpadding'>
+  <div class="container">
   <div class="col-md-3"></div>
     <div class="col-md-6">
-      <h1> Register for Text Classifier </h1>
         <form method=POST>
             {% csrf_token %}
             {{ form.as_p }}
           <button type='submit' class="btn btn-success">Create New Account</button>
         </form>
       <div class="login_button">
-        <p> Already have an account?<a href="{% url 'login' %}" class="btn btn-link"> Log in.</a></p>
+        <p> Already have an account?<a href="{% url 'classifier_app:login' %}" class="btn btn-link"> Log in.</a></p>
       </div>
         </div>
     </div>
   </div>
-
+</div>
+</div>
+</div>
 {% endblock %}
