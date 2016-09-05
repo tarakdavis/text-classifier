@@ -8,8 +8,8 @@ class NewVisitorTest(unittest.TestCase):
         self.browser = webdriver.Firefox()
         self.browser.implicitly_wait(10)
 
-    # def tearDown(self):
-    #     self.browser.quit()
+    def tearDown(self):
+        self.browser.quit()
 
     def test_can_start_a_list_and_retrieve_it_later(self):
         self.browser.get('http://iron-classifier.herokuapp.com/')
@@ -19,8 +19,8 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.find_element_by_id('textArea').send_keys('hello world')
         button2 = self.browser.find_element_by_id('inputPredictBtn')
         button2.click()
-        self.browser.getPageSource().contains("english")
-
+        header_text = self.browser.find_element_by_tag_name('p').text
+        self.assertIn('English', header_text)
 
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
