@@ -103,3 +103,15 @@ fieldset.vertical-center {
   min-height: 100%;
   padding-top: 1cm;
 }
+
+#pickclassif
+{
+    display:block !important;
+}
+
+#deleteStuff {
+    position: fixed;
+    bottom: 70px;
+    right: 100px;
+    font-weight: bolder;
+}

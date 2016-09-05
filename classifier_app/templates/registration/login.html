@@ -10,28 +10,24 @@
 <div class="site-wrapper">
 <div class="container">
 <div>
-<h1 class="title">Log In To Babble</h1>
+<h1 class="title">Log In To Babel</h1>
 <div class='smallpadding'>
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
 <div class="container">
-    <div class="col-md-4"></div>
-      <div class="col-md-4">
-        <form method="post" action="{% url 'login' %}">
-            <h1> </h1>
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input class="btn btn-success" type="submit" value="Login" />
-        </form>
-        <div class="login_button">
-          <p> Don&#146;t already have an account?<a href="{% url 'register' %}" class="btn btn-link"> Create an account.</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% if form.errors %}
+  <p>Your username and password didn't match. Please try again.</p>
+  {% endif %}</div>
+<form method="post" action="{% url 'classifier_app:login' %}">
+<h1> </h1>
+{% csrf_token %}
+{{ form.as_p }}
+<input type="button" id="newStuff" value="Login"/>
+</form>
+<div class="login_button">
+<p> Don&#146;t already have an account?<a href="{% url 'classifier_app:register' %}" class="btn btn-link"> Create an account.</a></p>
 </div>
 </div>
 </div>
-
+</div>
+</div>
+</body>
 {% endblock %}
