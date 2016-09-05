@@ -12,39 +12,40 @@
             <div>
                 <h1 class="title">We classify.</h1>
                 <div class="description">
-                    Let us do the work. Select a classifier and
-                    <br \>some text for us to classify, we'll spit out a category.
+                    Let us do the work. Select a classifier and either upload a .csv or
+                    <br \>type in some text for us to classify, we'll spit out a category.
                 </div>
                 <div id='smallpadding'>
                     <fieldset class='vertical-center'>
                         {% csrf_token %}
                         <div class="form-group">
                             <form method='POST'>
-                                <select autofocus name='classifier_id' class="form-control" id="pickclassif" required>
-                                    <option value="classifier_id" selected hidden>Select a classifier</option>
-                                    <option selected hidden></option>
+                                <select name='classifier_id' class="form-control" id="pickclassif" required>
+                                    <option value="" disabled selected hidden>Select a classifier</option>
+                                    <option></option>
                                 </select>
                                 <div id='smallpadding'>
                                 </div>
                             </form>
-
-                            <form id="stupid" name="text_to_classif" action="/pipeline_predict/" method="POST">
+                            <div class='row'>
+                                <div class='col-xl-4 col-md-4'>
+                                    <input id="fileSelect" type="file" accept=".csv" />
+                                </div>
+                                <div class='col-xl-8 col-md-8'>
+                                    <form id="stupid" name="text_to_classif" action="/pipeline_predict/" method="POST">
+                                        {% csrf_token %}
+                                        <textarea class="form-control" type="submit" rows="5" id="textArea" placeholder="Enter some text" name="text_to_classif" form="stupid"></textarea>
+                                        <br>
+                                    </form>
+                                </div>
+                            </div>
+                            <div id="smallpadding">
                                 {% csrf_token %}
-                            <textarea class="form-control" type="submit" rows="5" id="textArea" placeholder="Enter some text" name="text_to_classif" form="stupid" required></textarea><br>
-                            <input type="submit" value="Predict" class="submitButton">
-                            </form>
-
-
-                            <span class="help-block"></span>
-
-
-                        <div>
-
-                        </div>
+                                <input type="submit" value="Predict" class="submitButton">
+                            </div>
                     </fieldset>
+                    </div>
                 </div>
             </div>
-        </div>
-
 </body>
 {% endblock %}
