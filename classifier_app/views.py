@@ -36,8 +36,13 @@ def delete(request):
 
 def classifier_delete(request):
     # delete an object and send a confirmation response
-    Classifier.objects.get(pk=request.DELETE['pk']).delete()
-    return HttpResponse()
+    x = str(request)
+    y = int(re.findall(r'[0-9]+', x)[0])
+    dele = Classifier.objects.get(pk=y)
+    dele.delete()
+    return render(request, 'classifier_app/delete.html')
+    # Classifier.objects.get(pk=request.DELETE['pk']).delete()
+    # return HttpResponse()
 
 
 def data_delete(request):
