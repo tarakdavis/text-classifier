@@ -1,9 +1,19 @@
-{% extends "classifier_app/base.html" %}
+{% extends "classifier_app/base.html" %} {% load static %} {% block title %}{% endblock %}
+
 {% block content %}
+
 <body>
-<br><h1> T. Index.html  </h1><br>
+<div class="site-wrapper">
+<div class="container">
+<div>
+<h1 class="title">Classified:</h1>
+<div id='smallpadding'>
 <p>Hey! The text you typed in was: {{response}}.</p>
+</div>
+<div id='smallpadding'>
+<a style="color:black" href="/predict/" class="btn btn-default" type='submit'>Back to Predict</a>
+<a style="color:black" href="/delete/" class="btn btn-default" type='submit'>Off to Delete</a>
+</div>
 </body>
-<a style="color:black" href="/predict/" class="btn btn-default" type='submit'>Back to Predict Page</a>
 
 {% endblock %}
