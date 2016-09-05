@@ -9,8 +9,6 @@ from django.contrib.auth.views import login, logout
 app_name = 'classifier_app'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    # url(r'^train/$', views.train, name='train'),
-    # url(r'^predict/$', views.predict, name='predict'),
     # url(r'^predict/$', views.predict, name='predict'),  # T
     # url(r'^train/$', views.TrainView.as_view(), name='train'),
     # url(r'^train/$', views.TrainView.as_view(), name='train'),
