@@ -3,7 +3,7 @@ function buildCatList(response, $list) {
         var $li = $('<p>').appendTo($list)
         var $a = $('<a>').attr('href', '/data_delete/' + data.id).attr('id', data.id).appendTo($li)
         var $p = $('<p>').text(data.category).appendTo($a)
-        var $p = $('<p>').text(data.text).appendTo($a)
+        // var $p = $('<p>').text(data.text).appendTo($a)
 
     })
 }
