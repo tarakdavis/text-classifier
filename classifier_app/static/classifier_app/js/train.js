@@ -22,7 +22,9 @@ $(document).ready(function(){
                       type: 'POST',
                       url: '/api/data/',
                       data: myKeyVals,
-                      success: function() { alert("Data Save Complete") },
+                      success: function() { alert("Data Save Complete")
+                            window.location='/'
+                        },
                   })
             })
         })
