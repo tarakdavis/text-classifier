@@ -9,8 +9,9 @@ router.register(r'classifier', views.ClassifierViewSet)
 router.register(r'data', views.DataViewSet)
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
     url(r'^', include('classifier_app.urls')),
+    url(r'^train2/$', views.pipeline_predict, name='training'),
+    url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^api/', include(router.urls))
     ]
