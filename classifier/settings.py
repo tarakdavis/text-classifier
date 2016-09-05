@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 import dj_database_url
+from django.core.urlresolvers import reverse_lazy
 
 
 SECRET_KEY = os.environ['SECRET_KEY']
@@ -87,7 +88,6 @@ DATABASES = {
     }
 
 
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -102,6 +102,11 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+LOGIN_URL = reverse_lazy('login')
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = 'login/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/

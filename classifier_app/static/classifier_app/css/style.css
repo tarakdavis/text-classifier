@@ -108,3 +108,22 @@ fieldset.vertical-center {
 {
     display:block !important;
 }
+
+#deleteStuff {
+    position: fixed;
+    bottom: 70px;
+    right: 100px;
+    font-weight: bolder;
+}
+
+
+#deleteClsfrList {
+    position: relative;
+    left: 100px;
+    width: 400px;
+}
+
+/*#deleteList {
+    position: relative;
+    right: 100px;
+}*/
