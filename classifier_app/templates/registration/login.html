@@ -19,7 +19,7 @@
 <h1> </h1>
 {% csrf_token %}
 {{ form.as_p }}
-<input type="button" id="newStuff" value="Login"/>
+<input type="submit" id="newStuff" value="Login"/>
 </form>
 <div class="login_button">
 <p> Don&#146;t already have an account?<a href="{% url 'classifier_app:register' %}" class="btn btn-link userchoice"><b>Create an account.</b></a></p>
