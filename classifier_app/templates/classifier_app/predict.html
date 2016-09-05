@@ -19,9 +19,9 @@
                         {% csrf_token %}
                         <div class="form-group">
                             <form method='POST'>
-                                <select name='classifier_id' class="form-control" id="pickclassif" required>
-                                    <option value="" disabled selected hidden>Select a classifier</option>
-                                    <option></option>
+                                <select autofocus name='classifier_id' class="form-control" id="pickclassif" required>
+                                    <option value="classifier_id" selected hidden>Select a classifier</option>
+                                    <option selected hidden></option>
                                 </select>
                                 <div id='smallpadding'>
                                 </div>
@@ -29,21 +29,14 @@
 
                             <form id="stupid" name="text_to_classif" action="/pipeline_predict/" method="POST">
                                 {% csrf_token %}
-                            <textarea class="form-control" type="submit" rows="5" id="textArea" placeholder="Enter some text" name="text_to_classif" form="stupid"></textarea><br>
+                            <textarea class="form-control" type="submit" rows="5" id="textArea" placeholder="Enter some text" name="text_to_classif" form="stupid" required></textarea><br>
                             <input type="submit" value="Predict" class="submitButton">
                             </form>
 
 
                             <span class="help-block"></span>
 
-                        <br>
-                        <p>
-                            DropDown Classifiers via AJAX:
-                        </p>
-                        <br>
-                        <ul id="pickclassif">
 
-                        </ul>
                         <div>
 
                         </div>
