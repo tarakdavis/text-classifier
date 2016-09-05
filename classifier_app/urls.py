@@ -13,6 +13,8 @@ urlpatterns = [
     url(r'^train/$', views.train, name='train'),
     url(r'^predict/$', views.predict, name='predict'),
     url(r'^pipeline_predict/$', views.pipeline_predict, name='pipe'),
+    url(r'^delete/$', views.delete, name='delete'),
+
     # url(r'^train/$', views.TrainView.as_view(), name='train'),
     # url(r'^predict/$', views.PredictView.as_view(), name='predict'),
     # url(r'^predict/$', views.pipeline_predict, name='pipeline_predict')
