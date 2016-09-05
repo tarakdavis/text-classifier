@@ -31,6 +31,18 @@ def predict(request):
     return render(request, 'classifier_app/predict.html')
 
 
+def classifier_delete(request):
+    # delete an object and send a confirmation response
+    Classifier.objects.get(pk=request.DELETE['pk']).delete()
+    return HttpResponse()
+
+
+def data_delete(request):
+    # delete an object and send a confirmation response
+    Data.objects.get(pk=request.DELETE['pk']).delete()
+    return HttpResponse()
+
+
 # def new_classif(request):
 #     if request.method == 'POST':
 #         preclas = request.POST.get('newClass')
