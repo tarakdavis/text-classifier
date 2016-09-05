@@ -3,17 +3,14 @@
 
 function getClassifier(response) {
     return response.filter(function(result) {
-        console.log(result.name)
       return result.name
     })
 }
 
 function onDropdown(response, $drop) {
     response.forEach(function(classif) {
-        console.log("I am here !!!!!!!!")
         var x = document.getElementById("pickclassif");
         var optn = document.createElement("OPTION");
-        console.log(optn)
         optn.text = classif.name
         x.add(optn)
         return

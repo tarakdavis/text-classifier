@@ -108,3 +108,10 @@ fieldset.vertical-center {
 {
     display:block !important;
 }
+
+#deleteStuff {
+    position: fixed;
+    bottom: 70px;
+    right: 100px;
+    font-weight: bolder;
+}
