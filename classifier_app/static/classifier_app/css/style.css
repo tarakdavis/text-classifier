@@ -115,3 +115,15 @@ fieldset.vertical-center {
     right: 100px;
     font-weight: bolder;
 }
+
+
+#deleteClsfrList {
+    position: relative;
+    left: 100px;
+    width: 400px;
+}
+
+/*#deleteList {
+    position: relative;
+    right: 100px;
+}*/
