@@ -29,6 +29,33 @@ def predict(request):
     return render(request, 'classifier_app/predict.html')
 
 
+def classifier_delete(request):
+    # delete an object and send a confirmation response
+    Classifier.objects.get(pk=request.DELETE['pk']).delete()
+    return HttpResponse()
+
+
+def data_delete(request):
+    # delete an object and send a confirmation response
+    Data.objects.get(pk=request.DELETE['pk']).delete()
+    return HttpResponse()
+
+
+# def new_classif(request):
+#     if request.method == 'POST':
+#         preclas = request.POST.get('newClass')
+#
+#
+# def new_train(request):
+#     if request.method == 'POST':
+#         preclas = request.POST.get('newClass')
+#         precat = request.POST.get('newCat')
+#         pretext = request.POST.get('newText')
+#         print("===========================", preclas, precat, pretext)
+#
+#     context = {'response': "preclas" + "precat" + "pretext"}
+#     return render(request, 'classifier_app/tindex.html', context)
+
 def pipeline_predict(request):
     if request.method == 'POST':
         preTest = request.POST.get('text_to_classif')

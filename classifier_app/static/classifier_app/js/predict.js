@@ -1,17 +1,19 @@
 
-
-============================== CLASSIFIER CHOICES ===================================
+// ============================== CLASSIFIER CHOICES ===================================
 
 function getClassifier(response) {
     return response.filter(function(result) {
+        console.log(result.name)
       return result.name
     })
 }
 
 function onDropdown(response, $drop) {
     response.forEach(function(classif) {
+        console.log("I am here !!!!!!!!")
         var x = document.getElementById("pickclassif");
         var optn = document.createElement("OPTION");
+        console.log(optn)
         optn.text = classif.name
         x.add(optn)
         return
@@ -23,37 +25,7 @@ $.ajax({ url: '/api/classifier/' }).done(function(response) {
 });
 
 
-
-=======
-var $drop = $("#classchoice");
-
-
-============================== CATEGORY CHOICE ===================================
-
-
-function onDropdown(response, $drop) {
-    response.forEach(function(cat) {
-        var $li = $('<li>').text(cat.name).appendTo($drop);
-
-        // var $li = $('<li>').appendTo($drop)
-        // var $p = $('<p>').text(cat.name).appendTo($li)
-    });
-
-function getCategory(response) {
-    return response.results.filter(function(result) {
-      return result.category;
-    });
-}
-
-var $drop = $("#catchoice");
-$.ajax({ url: '/api/data/' }).done(function(response) {
-  onDropdown(getCategory(response), $drop);
-});
-
-
-
-============================== COOKIES ===================================
-
+// ============================== COOKIES ===================================
 // using jQuery
 function getCookie(name) {
     var cookieValue = null;
@@ -69,8 +41,7 @@ function getCookie(name) {
         }
     }
     return cookieValue;
-
-
+}
 var csrftoken = getCookie('csrftoken');
 
 function csrfSafeMethod(method) {
