@@ -1,0 +1,24 @@
+{% extends "classifier_app/base.html" %}
+{% block content %}
+<body>
+<br><h1> Upload File</h1><br>
+
+
+<!-- Upload form. Note enctype attribute! -->
+      <form action="{% url 'classifier_app:upload_file' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+{{ form.as_p }}
+          <!-- <p>{{ form.non_field_errors }}</p>
+          <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+          <p>
+              {{ form.docfile.errors }}
+              {{ form.docfile }}
+          </p>
+         -->
+          <p><input type="submit" value="Upload" /></p>
+      </form>
+
+</body>
+
+
+{% endblock %}
