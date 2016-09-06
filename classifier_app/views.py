@@ -1,13 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from django.urls import reverse
+# from django.urls import reverse
 from django.views import View
 from rest_framework import viewsets
-from .models import Classifier, Data
+from .models import Classifier, Data, Document
 from .serializers import ClassifierSerializer, DataSerializer
 from django.views.generic import TemplateView
 from django.views import generic
-from django.urls import reverse
 from rest_framework.decorators import api_view
 import re
 # from csv_reader import get_text_data
@@ -18,6 +17,11 @@ from sklearn.naive_bayes import MultinomialNB as MNB
 from sklearn.pipeline import Pipeline
 from collections import defaultdict
 
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+from django.core.urlresolvers import reverse
+
+from .forms import DocumentForm
 
 def index(request):
     return render(request, 'classifier_app/index.html')
@@ -53,6 +57,21 @@ def data_delete(request):
     dele = Data.objects.get(pk=y)
     dele.delete()
     return render(request, 'classifier_app/delete.html')
+
+
+def upload_file(request):
+    if request.method == 'POST':
+        form = DocumentForm(request.POST, request.FILES)
+        if form.is_valid():
+            new_doc = Document(docfile=request.FILES['docfile'])
+            new_doc.save()
+            return HttpResponseRedirect(reverse('classifier_app.views.upload_file'))
+    else:
+        form = DocumentForm()
+
+    documents = Document.objects.all()
+    return render_to_response('classifier_app/upload_file.html',
+                            {'documents': documents, 'form': form})
 
 
 def import_csv(request):#, csv_file_name):
