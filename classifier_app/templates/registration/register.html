@@ -17,7 +17,7 @@
       <form method=POST>
       {% csrf_token %}
       {{ form.as_p }}
-      <input type="submit" id="newStuff" value="Create New Account"/>
+      <input type="submit" id="newStuff" value="Create New Account" a href="{% url 'classifier_app:login' %}"/>
       </form>
       <div class="login_button">
       <p> Already have an account?<a href="{% url 'classifier_app:login' %}" class="btn btn-link userchoice"><b>Log in.</b></a></p>
