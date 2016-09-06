@@ -12,26 +12,6 @@ $(document).ready(function(){
             })
         }
 
-        function checkAgain(response, clName, $clKey) {
-            response.forEach(function(check){
-                if (check.name == clName){
-                    $clKey = String(check.id)
-                    }
-                })
-            var myKeyVals = {
-                category: catName,
-                text: theText,
-                classifier: $clKey
-                }
-            $.ajax({
-                type: "POST",
-                url: "/api/data/",
-                data: myKeyVals,
-                success: function() { alert("Data Save Complete")
-                    window.location='/'}
-                })
-            }
-
         function checkIfAlreadyExist(response, clName, $flag, $clKey) {
             response.forEach(function(check){
                 if (check.name == clName){
@@ -46,22 +26,39 @@ $(document).ready(function(){
                     data: {name: clName},
                     success: function() { alert("Classifer Save Complete") },
                         })
-                    }
+            }
             else {
                 alert ("Classifier is already in your database.")
+                    }
+
+            function checkAgain(response, clName, $clKey) {
+                response.forEach(function(check){
+                    if (check.name == clName){
+                        $clKey = String(check.id)
+                        }
+                    })
+                    var myKeyVals = {
+                        category: catName,
+                        text: theText,
+                        classifier: $clKey
+                        }
+                    $.ajax({
+                          type: "POST",
+                          url: "/api/data/",
+                          data: myKeyVals,
+                          success: function() { alert("Data Save Complete")
+                                window.location='/'}
+                        })
                 }
-        }
+
+            $.ajax({ url: '/api/classifier/' }).done(function(response) {
+              checkAgain(getClassifiers(response), clName, $clKey);
+                });
+            }
 
         $.ajax({ url: '/api/classifier/' }).done(function(response) {
           checkIfAlreadyExist(getClassifiers(response), clName, $flag, $clKey);
             });
-
-        $(document).ready(function(){
-
-        $.ajax({ url: '/api/classifier/' }).done(function(response) {
-          checkAgain(getClassifiers(response), clName, $clKey);
-            });
-        })
     })
 
 // The event listener for the file upload

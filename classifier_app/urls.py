@@ -18,6 +18,7 @@ urlpatterns = [
     # url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^tt/$', views.pipeline_predict, name='tindex'),
     url(r'^train/$', views.train, name='train'),
+    url(r'^import_csv/$', views.import_csv, name='import_csv'),
     url(r'^predict/$', views.predict, name='predict'),
     url(r'^pipeline_predict/$', views.pipeline_predict, name='pipe'),
     url(r'^delete/$', views.delete, name='delete'),
