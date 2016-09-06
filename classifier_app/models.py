@@ -5,14 +5,12 @@ from django.contrib.auth.models import User
 class Classifier(models.Model):
     name = models.CharField(max_length=100)
 
-    def train():
-        pass
-
-    def predict():
-        pass
-
 
 class Data(models.Model):
     category = models.CharField(max_length=100)
     text = models.TextField()
     classifier = models.ForeignKey(Classifier)
+
+
+class Document(models.Model):
+    docfile = models.FileField(upload_to='documents/%Y/%m/%d')
