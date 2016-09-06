@@ -1,9 +1,16 @@
-{% extends "classifier_app/base.html" %}
+{% extends "classifier_app/base.html" %} {% load staticfiles %}
+
+<head>
+</head>
 {% block content %}
+</head>
+
 <body>
-<br><h1> Upload File</h1><br>
-
-
+<div class="site-wrapper">
+<div class="container">
+<div>
+<h2 class="title">Upload file.</h2>
+<div id='needsmorepadding'>
 <!-- Upload form. Note enctype attribute! -->
       <form action="{% url 'classifier_app:upload_file' %}" method="post" enctype="multipart/form-data">
 {% csrf_token %}
@@ -17,7 +24,10 @@
          -->
           <p><input type="submit" value="Upload" /></p>
       </form>
-
+</div>
+</div>
+</div>
+</div>
 </body>
 
 

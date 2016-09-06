@@ -52,9 +52,10 @@ select:invalid {
 
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
   margin: 1px;
-  margin-left: 20px;
+  margin-left: 10px;
   font-family: 'Lobster Two', cursive;
   font-size: 24px;
+  padding-bottom: 5px;
 }
 
 head {
@@ -97,6 +98,10 @@ ul.nav.navbar-nav.nabar-right li a:hover {
 a.userchoice {
   text-decoration: none;
   color: #2C3E50;
+}
+
+a.userchoice:hover {
+  font-style: italic;
 }
 
 .userchoice {
