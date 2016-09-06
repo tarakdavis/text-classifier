@@ -91,6 +91,10 @@ ul.nav.navbar-nav.nabar-right li a:hover {
   padding-top: 1cm;
 }
 
+#deleteClsfrList {
+  text-align: left;
+}
+
 #bottompadding{
   padding-bottom: 3cm;
 }
