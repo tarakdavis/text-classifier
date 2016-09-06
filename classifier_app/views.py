@@ -100,7 +100,7 @@ def pipeline_predict(request):
         preTest = request.POST.get('text_to_classif')
         predictTestData = preTest.split()
         print("*********************", predictTestData)
-    py_pipeline = Pipeline([("count", CV()),
+    py_pipeline = Pipeline([("count", CV(token_pattern=r'[a-zA-Z]+|\s+|\_+|[^\w\d\s]')),
                             # ("tfid", TF()),
                             ("multi", MNB())])
     dbData = Data.objects.all()
