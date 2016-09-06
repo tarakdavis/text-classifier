@@ -1,0 +1,19 @@
+{% extends "classifier_app/base.html" %} {% load static %} {% block title %}{% endblock %}
+
+{% block content %}
+
+<body>
+<div class="site-wrapper">
+<div class="container">
+<div>
+<h1 class="title">You successfully imported your file:</h1>
+<div id='smallpadding'>
+<p>{{response}}.</p>
+</div>
+<div id='smallpadding'>
+<a style="color:black" href="/predict/" class="btn btn-default" type='submit'>Back to Predict</a>
+<a style="color:black" href="/delete/" class="btn btn-default" type='submit'>Off to Delete</a>
+</div>
+</body>
+
+{% endblock %}

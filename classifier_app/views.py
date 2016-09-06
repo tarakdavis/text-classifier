@@ -10,6 +10,7 @@ from django.views import generic
 from django.urls import reverse
 from rest_framework.decorators import api_view
 import re
+# from csv_reader import get_text_data
 # for the Pipeline
 from sklearn.feature_extraction.text import CountVectorizer as CV
 from sklearn.feature_extraction.text import TfidfTransformer as TF
@@ -53,8 +54,12 @@ def data_delete(request):
     dele.delete()
     return render(request, 'classifier_app/delete.html')
 
-    # return HttpResponse(classifier_app/delete.html)
 
+def import_csv(request):#, csv_file_name):
+    # imported_text = get_text_data(csv_file_name)
+    #parse it - clean it
+    #add to DB
+    return render ( request, 'classifier_app/successful_import.html')
 
 # def new_classif(request):
 #     if request.method == 'POST':
