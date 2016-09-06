@@ -92,7 +92,11 @@ ul.nav.navbar-nav.nabar-right li a:hover {
 }
 
 #deleteClsfrList {
-  text-align: left;
+  text-align: center;
+}
+
+#deleteList {
+  text-align: center;
 }
 
 #bottompadding{
@@ -143,16 +147,3 @@ fieldset.vertical-center {
     right: 100px;
     font-weight: bolder;
 }
-
-
-#deleteClsfrList {
-    position: relative;
-    left: 100px;
-    width: 400px;
-}
-
-
-/*#deleteList {
-    position: relative;
-    right: 100px;
-}*/
