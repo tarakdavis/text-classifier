@@ -1,15 +1,11 @@
 {% extends "classifier_app/base.html" %} {% load staticfiles %} {% block title %}{% endblock %}
-
-<head>
-<h2>Classify your text.</h2>
-</head>
 {% block content %}
 
 <body>
 <div class="site-wrapper">
 <div class="container">
 <div>
-<h1 class="title">You train.</h1>
+<h2 class="title">You train.</h2>
 <div class="description">
 Build your own classifier. Give it a name (or choose one of ours), a category of that name,
 <br \>and upload a .csv or type some text to train it.
@@ -20,16 +16,14 @@ Build your own classifier. Give it a name (or choose one of ours), a category of
 {% csrf_token %}
 <div class="form-group">
 <input type="text" class="form-control" id="inputclass" placeholder="Name the classifer">
-<div id='smallpadding'>
-</div>
+<div id='smallpadding'></div>
 <input type="text" class="form-control" id="inputcat" placeholder="Name the category">
-<div id='smallpadding'>
-</div>
+<div id='smallpadding'></div>
 <div class='row'>
-<div class='col-xl-4 col-md-4'>
+<div class='col-xl-3 col-md-3'>
 <input id="fileSelect" type="file" accept=".csv" />
 </div>
-<div class='col-xl-8 col-md-8'>
+<div class='col-xl-9 col-md-9'>
 <textarea class="form-control" rows="5" id="textArea" placeholder="Enter some text"></textarea>
 </div>
 </div>
@@ -37,8 +31,8 @@ Build your own classifier. Give it a name (or choose one of ours), a category of
 {% csrf_token %}
 <input type="button" id="newStuff" value="Train">
 </div>
-</fieldset>
 </div>
+</fieldset>
 </div>
 </div>
 </div>

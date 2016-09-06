@@ -11,6 +11,18 @@ nav {
   background-color: 615C60;
 }
 
+a {
+  color: #2C3E50;
+  text-decoration: none;
+
+}
+
+a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: #2C3E50;
+}
+
 #centerme {
   width:800px;
   margin:0 auto;
@@ -40,7 +52,7 @@ select:invalid {
 
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
   margin: 1px;
-  margin-left: 60px;
+  margin-left: 20px;
 }
 
 head {
@@ -82,7 +94,12 @@ ul.nav.navbar-nav.nabar-right li a:hover {
 
 a.userchoice {
   text-decoration: none;
-  color: #2C3E50;.
+  color: #2C3E50;
+}
+
+.userchoice {
+  text-decoration: none;
+  color: #2C3E50;
 }
 
 h1, h2 {
@@ -122,6 +139,7 @@ fieldset.vertical-center {
     left: 100px;
     width: 400px;
 }
+
 
 /*#deleteList {
     position: relative;
