@@ -15,16 +15,16 @@ Build your own classifier. Give it a name (or choose one of ours), a category
 <fieldset class='vertical-center'>
 {% csrf_token %}
 <div class="form-group">
-<input type="text" class="form-control" id="inputclass" placeholder="Name the classifer">
+<input type="text" class="form-control" id="inputclass" placeholder="Name the classifer" required="required">
 <div id='smallpadding'></div>
-<input type="text" class="form-control" id="inputcat" placeholder="Name the category">
+<input type="text" class="form-control" id="inputcat" placeholder="Name the category" required="required">
 <div id='smallpadding'></div>
 <div class='row'>
 <div class='col-xl-3 col-md-3'>
 <input id="fileSelect" type="file" accept=".csv" />
 </div>
 <div class='col-xl-9 col-md-9'>
-<textarea class="form-control" rows="5" id="textArea" placeholder="Enter some text"></textarea>
+<textarea class="form-control" rows="5" id="textArea" placeholder="Enter some text" required="required"></textarea>
 </div>
 </div>
 <div id="smallpadding">
