@@ -24,11 +24,11 @@ https://iron-classifier.herokuapp.com/
 
 
 ##As a user, I want to be able to...
--Use this web app online.
--Create a new classifier with a name.
--Delete a classifier.
--Add a new category name to a classifier.
--Train a classifier with a single piece of text (word/n-gram/sentence/phrase) and category.
--Train a classifier with a CSV with the format of text, category - either add any categories that didn't exist or throw an error.
--Use a classifier to predict the category for a piece of text.
--Use a classifier to predict the categories for an uploaded file containing rows of text, one prediction per row.
+- Use this web app online.
+- Create a new classifier with a name.
+- Delete a classifier.
+- Add a new category name to a classifier.
+- Train a classifier with a single piece of text (sentence/phrase) and category.
+- Train a classifier with a CSV with the format of text, category - either add any categories that didn't exist or throw an error.
+- Use a classifier to predict the category for a piece of text.
+- Use a classifier to predict the categories for an uploaded file containing rows of text, one prediction per row.
