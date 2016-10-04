@@ -1,146 +1,114 @@
-*{
-  font-family: 'Raleway', sans-serif;
+* {
+    font-family: 'Raleway', sans-serif;
 }
-
 .container {
-  margin-top: 50px;
-  width: 1000px;
+    margin-top: 50px;
+    width: 1000px;
 }
-
 nav {
-  background-color: 615C60;
+    background-color: #615C60;
 }
-
 a {
-  color: #2C3E50;
-  text-decoration: none;
-
+    color: #2C3E50;
+    text-decoration: none;
 }
-
 a:hover {
-  text-decoration: none;
-  font-weight: bold;
-  color: #2C3E50;
+    text-decoration: none;
+    font-weight: bold;
+    color: #2C3E50;
 }
-
 #centerme {
-  width:800px;
-  margin:0 auto;
-  padding-top: 4cm;
+    width: 800px;
+    margin: 0 auto;
+    padding-top: 4cm;
 }
-
 #needsmorepadding {
-  padding-top: 3cm;
+    padding-top: 3cm;
 }
-
 #smallpadding {
-  padding-top: 0.5cm;
+    padding-top: 0.5cm;
 }
-
 body {
-  text-align: center;
+    text-align: center;
 }
-
 select:invalid {
-  color: gray;
+    color: gray;
 }
-
 #row1col2 {
-  text-align: center;
-  vertical-align: middle;
+    text-align: center;
+    vertical-align: middle;
 }
-
+.navbar-brand {
+    padding: 15px;
+}
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
-  margin: 1px;
-  margin-left: 10px;
-  font-family: 'Lobster Two', cursive;
-  font-size: 24px;
-  padding-bottom: 5px;
+    font-family: 'Lobster Two', cursive;
+    font-size: 24px;
 }
-
 head {
-  width:100%;
-  left:50%;
-  top:50%;
+    width: 100%;
+    left: 50%;
+    top: 50%;
 }
-
 .form-control {
-  border: 1px solid #532D3B;
-  color: #000;
-  background-color: transparent;
+    border: 1px solid #532D3B;
+    color: #000;
+    background-color: transparent;
 }
-
-div.container-fluid{
-  width: 100%;
+div.container-fluid {
+    width: 100%;
 }
-
 .title {
-  font-weight: bold;
+    font-weight: bold;
 }
-
-
 ul.nav.navbar-nav.nabar-right li a:hover {
-  color: #9FA6AD;
-}
-
-.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-brand:hover{
     color: #9FA6AD;
 }
-
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-brand:hover {
+    color: #9FA6AD;
+}
 #needspadding {
-  padding-top: 1cm;
+    padding-top: 1cm;
 }
-
 #deleteClsfrList {
-  text-align: left;
+    text-align: left;
 }
-
 #deleteList {
-  text-align: left;
+    text-align: left;
 }
-
-#bottompadding{
-  padding-bottom: 3cm;
+#bottompadding {
+    padding-bottom: 3cm;
 }
-
 a.userchoice {
-  text-decoration: none;
-  color: #2C3E50;
+    text-decoration: none;
+    color: #2C3E50;
 }
-
 a.userchoice:hover {
-  font-style: italic;
+    font-style: italic;
 }
-
 .userchoice {
-  text-decoration: none;
-  color: #2C3E50;
+    text-decoration: none;
+    color: #2C3E50;
 }
-
 h1, h2 {
-  font-family: 'Lobster', cursive;
+    font-family: 'Lobster', cursive;
 }
-
 fieldset.vertical-center {
-  min-height: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
-
 .site-wrapper {
-  display: table;
-  width: 100%;
-  height: 100%;
-  min-height: 100%;
-  padding-top: 1cm;
+    display: table;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    padding-top: 1cm;
 }
-
-#pickclassif
-{
-    display:block !important;
+#pickclassif {
+    display: block !important;
 }
-
 #deleteStuff {
     position: fixed;
     bottom: 70px;
