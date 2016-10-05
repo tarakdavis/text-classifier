@@ -43,7 +43,17 @@ select:invalid {
 }
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
     font-family: 'Lobster Two', cursive;
-    font-size: 24px;
+    font-size: 28px;
+}
+#username, #first_name, #last_name, #pwd {
+  width: 200px !important;
+  height: 27px !important;
+  width: 800px;
+  margin: 0 auto;
+}
+#inputclass, #inputcat {
+  width: 1000px;
+  height: 25px;
 }
 head {
     width: 100%;
@@ -89,6 +99,20 @@ a.userchoice:hover {
 .userchoice {
     text-decoration: none;
     color: #2C3E50;
+}
+#createlog {
+  text-decoration: none;
+  color: #2C3E50;
+}
+#id_password, #id_username {
+  border-radius: 0.3em;
+  width: 200px !important;
+  height: 27px !important;
+  width: 800px;
+  margin: 0 auto;
+  border: 1px solid #532D3B;
+  color: #000;
+  background-color: transparent;
 }
 h1, h2 {
     font-family: 'Lobster', cursive;

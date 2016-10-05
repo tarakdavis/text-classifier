@@ -1,7 +1,7 @@
 {% extends "classifier_app/base.html" %} {% load staticfiles %} {% block title %}{% endblock %}
 
 <head>
-</head>
+
 {% block content %}
 </head>
 
@@ -11,18 +11,28 @@
 <div>
 <h2 class="title">Log In To Babble</h2>
 <div class='smallpadding'>
-<div class="container">
   {% if form.errors %}
   <p>Your username and password didn't match. Please try again.</p>
-  {% endif %}</div>
-<form method="post" action="{% url 'classifier_app:login' %}">
-<h1> </h1>
+  {% endif %}
+
+  {% if next %}
+      {% if user.is_authenticated %}
+      <p>Your account doesn't have access to this page. To proceed,
+      please login with an account that has access.</p>
+      {% else %}
+      <p>Please login to see this page.</p>
+      {% endif %}
+    {% endif %}
+<form method="post" id='login' action="{% url 'classifier_app:login' %}">
 {% csrf_token %}
-{{ form.as_p }}
+    <p>{{ form.username.label_tag }}</p>
+    <p id='login'>{{ form.username }}</p>
+    <p>{{ form.password.label_tag }}</p>
+    <p id='login'>{{ form.password }}</p>
 <input type="submit" id="newStuff" value="Login"/>
 </form>
 <div class="login_button">
-<p> Don&#146;t already have an account?<a href="{% url 'classifier_app:register' %}" class="btn btn-link userchoice"><b>Create an account.</b></a></p>
+<p> Don&#146;t already have an account?<a href="{% url 'classifier_app:register' %}" id='createlog' class="btn btn-link userchoice">Create an account.</a></p>
 </div>
 </div>
 </div>

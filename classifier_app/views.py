@@ -21,7 +21,11 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.core.urlresolvers import reverse
 
-from .forms import DocumentForm
+from .forms import DocumentForm, UserForm
+
+from django.contrib.auth import authenticate, login
+from django.views.generic.edit import CreateView
+
 
 def index(request):
     return render(request, 'classifier_app/index.html')
@@ -146,6 +150,19 @@ def pipeline_predict(request):
 #         context = super(PredictView, self).get_context_data(**kwargs)
 #         context['classifier_list'] = Classifier.objects.all()
 #         return context
+
+
+class RegisterView(CreateView):
+    form_class = UserForm
+    template_name = 'registration/register.html'
+    success_url = '/'
+
+    def form_valid(self, form):
+        valid = super(RegisterView, self).form_valid(form)
+        username, password = form.cleaned_data.get('username'), form.cleaned_data.get('password')
+        new_user = authenticate(username=username, password=password)
+        login(self.request, new_user)
+        return valid
 
 
 class ClassifierViewSet(viewsets.ModelViewSet):
